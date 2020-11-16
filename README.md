@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Recuepração de Senha
 
 ** Requisitos Funcionais **
@@ -96,3 +97,7 @@
 
 
 > Novas Rotas Cria no index do routes lá no shared
+=======
+# API Para o TCC
+API para plataforma do TCC
+>>>>>>> 3e9249972d47fadca206ae3165f25db67d48147f
