@@ -2,7 +2,7 @@
   "name": "project-node-exemple",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/renatodasilvaborges/project-node-exemple.git",
+  "repository": "https://github.com/renatodasilvaborges/api-facilmercado",
   "author": "renatodasilvaborges <renatodasilvaborges@gmail.com>",
   "license": "MIT",
   "scripts": {

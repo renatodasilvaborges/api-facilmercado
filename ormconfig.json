@@ -5,7 +5,7 @@
     "port": 5432,
     "username": "postgres",
     "password": "docker",
-    "database": "gostack_gobarber",
+    "database": "facilmercado",
     "entities": [
       "./src/modules/**/infra/typeorm/entities/*.ts"
     ],
@@ -21,7 +21,7 @@
     "type": "mongodb",
     "host": "localhost",
     "port": 27017,
-    "database": "gobarber",
+    "database": "facilmercado",
     "useUnifiedTopology": true,
     "entities": [
       "./src/modules/**/infra/typeorm/schemas/*.ts"
