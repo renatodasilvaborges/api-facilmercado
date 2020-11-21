@@ -17,6 +17,7 @@ class CreateProductService {
   constructor(
     @inject('ProductsRepository')
     private productsRepository: IProductsRepository,
+
   ) {}
 
   public async execute({ name, provider_id, price, image, description }: IRequest): Promise<Product> {

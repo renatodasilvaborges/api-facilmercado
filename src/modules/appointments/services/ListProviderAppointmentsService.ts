@@ -32,6 +32,8 @@ class ListProviderMonthAvailabilityService {
       cacheKey,
     );
 
+    // let appointments;
+
     if (!appointments) {
       const appointments = await this.appointmentsRepository.findAllInDayFromProvider({
         provider_id,

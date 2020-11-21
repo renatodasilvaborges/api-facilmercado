@@ -11,6 +11,7 @@ import IChacheProvider from '@shared/container/providers/CacheProvider/models/IC
 interface IRequest {
   provider_id: string;
   user_id: string;
+  product_id?: string;
   date: Date;
 }
 
@@ -27,7 +28,7 @@ class CreateAppointmentService {
     private cacheProvider: IChacheProvider,
   ) {}
 
-  public async execute({ date, provider_id, user_id }: IRequest): Promise<Appointment> {
+  public async execute({ date, provider_id, user_id, product_id }: IRequest): Promise<Appointment> {
     const  appointmentDate = startOfHour(date);
 
     if (user_id === provider_id) {
@@ -38,7 +39,7 @@ class CreateAppointmentService {
       throw new AppError("yout cant create appointment in the past date");
     }
 
-    const findAppointmentInSameDate = await this.appointmentsRepository.findByDate(
+    /* const findAppointmentInSameDate = await this.appointmentsRepository.findByDate(
       appointmentDate,
       provider_id,
     );
@@ -47,9 +48,12 @@ class CreateAppointmentService {
       throw new AppError('This appointment is already booked');
     }
 
+    */
+
     const appointment = await this.appointmentsRepository.create({
       provider_id,
       user_id,
+      product_id,
       date: appointmentDate,
     });
 

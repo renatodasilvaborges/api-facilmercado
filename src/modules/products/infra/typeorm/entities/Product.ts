@@ -48,7 +48,7 @@ class Products {
   @Expose({ name: 'image_url' })
   getImageUrl(): string | null {
     if (!this.image) {
-      return null;
+      return 'https://facilmercado.s3.us-east-2.amazonaws.com/150.png';
     }
 
     switch(uploadConfig.driver) {

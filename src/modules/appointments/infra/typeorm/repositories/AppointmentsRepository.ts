@@ -25,8 +25,8 @@ class AppointmentsRepository implements IAppointmentsRepository {
       return findAppoiment;
   }
 
-  public async create({ provider_id, user_id, date }: ICreateAppointmentDTO): Promise<Appointment> {
-    const appointment = this.ormRepository.create({ provider_id, user_id, date});
+  public async create({ provider_id, user_id, product_id, date }: ICreateAppointmentDTO): Promise<Appointment> {
+    const appointment = this.ormRepository.create({ provider_id, user_id, product_id, date});
 
     await this.ormRepository.save(appointment);
 
@@ -68,7 +68,8 @@ class AppointmentsRepository implements IAppointmentsRepository {
           `to_char(${dateFieldName}, 'DD-MM-YYYY') = '${parsedDay}-${parsedMonth}-${year}'`,
         ),
       },
-      relations: ['user'],
+      relations: ['user', 'product'],
+
     })
 
     return appointments;
