@@ -1,5 +1,5 @@
 import { injectable, inject } from 'tsyringe';
-
+import { classToClass } from 'class-transformer';
 import Product from '../infra/typeorm/entities/Product';
 import IProductsRepository from '../repositories/IProductsRepository';
 
@@ -20,7 +20,7 @@ class ListProviderMonthAvailabilityService {
         provider_id
       });
 
-    return products;
+    return classToClass(products);
   }
 }
 

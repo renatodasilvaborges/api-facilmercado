@@ -80,10 +80,9 @@ export default class ProductsController {
 
   public async updateImage(request: Request, response: Response): Promise<Response> {
     const updateImageProduct = container.resolve(UpdateProductImageService);
-    const { product_id } = request.params;
 
       const product = await updateImageProduct.execute({
-        product_id,
+        product_id: request.params.id,
         image: request.file.filename,
       });
 

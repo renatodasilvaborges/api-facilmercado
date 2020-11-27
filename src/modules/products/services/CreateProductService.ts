@@ -7,7 +7,7 @@ import Product from '../infra/typeorm/entities/Product';
 interface IRequest {
   name: string;
   provider_id: string;
-  price: Number;
+  price: string;
   image: string;
   description: string;
 }

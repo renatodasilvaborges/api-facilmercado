@@ -9,7 +9,7 @@ export default class UserAvatarController{
     const updateUserAvatar = container.resolve(UpdateUserAvatarService);
 
       const user = await updateUserAvatar.execute({
-        user_id: request.body.id,
+        user_id: request.user.id,
         avatarFilename: request.file.filename,
       });
 

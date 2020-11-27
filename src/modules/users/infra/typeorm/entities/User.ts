@@ -38,7 +38,7 @@ class User {
   @Expose({ name: 'avatar_url' })
   getAvatarUrl(): string | null {
     if (!this.avatar) {
-      return 'https://facilmercado.s3.us-east-2.amazonaws.com/150.png';
+      return null;
     }
 
     switch(uploadConfig.driver) {

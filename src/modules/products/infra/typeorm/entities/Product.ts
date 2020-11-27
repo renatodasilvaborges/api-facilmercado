@@ -31,7 +31,7 @@ class Products {
   name: string;
 
   @Column()
-  price: Number;
+  price: string;
 
   @Column()
   image: string;
@@ -48,7 +48,7 @@ class Products {
   @Expose({ name: 'image_url' })
   getImageUrl(): string | null {
     if (!this.image) {
-      return 'https://facilmercado.s3.us-east-2.amazonaws.com/150.png';
+      return null;
     }
 
     switch(uploadConfig.driver) {

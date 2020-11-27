@@ -16,7 +16,7 @@ productsRouter.get('/', productsRouterController.show);
 productsRouter.get('/:provider_id/available', productsRouterController.index);
 productsRouter.get('/:product_id', productsRouterController.showProduct);
 productsRouter.put('/', productsRouterController.update);
-productsRouter.patch('/image', upload.single('image'), productsRouterController.updateImage);
+productsRouter.patch('/image/:product_id', upload.single('image'), productsRouterController.updateImage);
 
 
 export default productsRouter;
